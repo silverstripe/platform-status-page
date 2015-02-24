@@ -44,11 +44,8 @@
 	        <div class="six columns">
 		        <h2>Database</h2>
 		        <?php
-		        $host = "127.0.0.1";
-		        $username = "root";
-		        $passwd = "";
-		        $db = "SS_mysite";
-		        $conn = new mysqli($host, $username, $passwd, $db);
+		        $conf = require_once("config.php");
+		        $conn = new mysqli($conf['host'], $conf['username'], $conf['passwd'], $conf['db']);
 		        echo 'Connected to '.$host.' ('.$conn->get_server_info().')';
 		        ?>
 	        </div>
